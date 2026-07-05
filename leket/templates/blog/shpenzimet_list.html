@@ -12,6 +12,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>Shuma</th>
+                    <th>Kategoria</th>
                     <th>Data</th>
                 </tr>
         </thead>
@@ -19,8 +20,10 @@
             {% for s in shpenzimet_list %}
             <tr>
                 <td>{{ s.shuma }}</td>
+                <td>{{ s.kategoria }}</td>
                 <td>{{ s.data }}</td>
                 <td>
+                    <a href="{% url 'redakto_shpenzime' s.id %}" class="btn btn-sm btn-warning">Edit</a>
                     <a href="{% url 'fshi_shpenzime' s.id %}" class="btn btn-sm btn-danger">Fshi</a>
                 </td>
             </tr>
@@ -33,7 +36,7 @@
     </table>
 
     <br>
-    <a href="/">Kryesore</a>
+    <a href="{% url 'shtepia' %}" class="btn btn-primary mt-3">Kryesore</a>
 
 </body>
 </html>
